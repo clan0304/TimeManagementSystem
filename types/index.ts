@@ -158,3 +158,153 @@ export type UpdateSixBlockChecklistItem = {
   is_completed?: boolean;
   item_order?: number;
 };
+
+// ============ Seinfeld Chain ============
+export type ChainHabit = {
+  id: string;
+  user_id: string;
+  name: string;
+  description: string | null;
+  success_criteria: string | null;
+  color: string;
+  icon: string;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+};
+
+export type CreateChainHabit = {
+  name: string;
+  description?: string | null;
+  success_criteria?: string | null;
+  color?: string;
+  icon?: string;
+};
+
+export type UpdateChainHabit = {
+  name?: string;
+  description?: string | null;
+  success_criteria?: string | null;
+  color?: string;
+  icon?: string;
+  is_active?: boolean;
+};
+
+export type ChainEntryStatus = 'success' | 'fail' | 'skip';
+
+export type ChainEntry = {
+  id: string;
+  habit_id: string;
+  user_id: string;
+  date: string;
+  status: ChainEntryStatus;
+  memo: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+export type CreateChainEntry = {
+  habit_id: string;
+  date: string;
+  status: ChainEntryStatus;
+  memo?: string | null;
+};
+
+export type UpdateChainEntry = {
+  status?: ChainEntryStatus;
+  memo?: string | null;
+};
+
+export type ChainHabitStats = {
+  currentStreak: number;
+  longestStreak: number;
+  totalSuccess: number;
+  totalFail: number;
+  totalSkip: number;
+  successRate: number; // percentage (success / (success + fail))
+};
+
+export type LeanActivityType = 'value' | 'support' | 'waste';
+
+export type LeanCategory = {
+  id: string;
+  user_id: string;
+  name: string;
+  type: LeanActivityType;
+  icon: string;
+  is_default: boolean;
+  created_at: string;
+};
+
+export type CreateLeanCategory = {
+  name: string;
+  type: LeanActivityType;
+  icon?: string;
+};
+
+export type LeanActivity = {
+  id: string;
+  user_id: string;
+  category_id: string | null;
+  name: string;
+  type: LeanActivityType;
+  duration_minutes: number;
+  date: string;
+  start_time: string | null;
+  note: string | null;
+  is_recurring: boolean;
+  created_at: string;
+  updated_at: string;
+};
+
+export type CreateLeanActivity = {
+  category_id?: string | null;
+  name: string;
+  type: LeanActivityType;
+  duration_minutes: number;
+  date: string;
+  start_time?: string | null;
+  note?: string | null;
+};
+
+export type UpdateLeanActivity = {
+  category_id?: string | null;
+  name?: string;
+  type?: LeanActivityType;
+  duration_minutes?: number;
+  start_time?: string | null;
+  note?: string | null;
+};
+
+export type LeanElimination = {
+  id: string;
+  user_id: string;
+  activity_name: string;
+  estimated_weekly_minutes: number;
+  eliminated_at: string;
+  is_active: boolean;
+  note: string | null;
+};
+
+export type CreateLeanElimination = {
+  activity_name: string;
+  estimated_weekly_minutes: number;
+  note?: string | null;
+};
+
+// Stats
+export type LeanWeeklyStats = {
+  valueMinutes: number;
+  supportMinutes: number;
+  wasteMinutes: number;
+  totalMinutes: number;
+  valuePercentage: number;
+  supportPercentage: number;
+  wastePercentage: number;
+};
+
+export type LeanWastePattern = {
+  name: string;
+  totalMinutes: number;
+  occurrences: number;
+};

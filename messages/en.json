@@ -1,0 +1,196 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "back": "Back",
+    "confirm": "Confirm",
+    "success": "Success",
+    "error": "Error"
+  },
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "systems": "Systems",
+      "howItWorks": "How It Works",
+      "signIn": "Sign In",
+      "getStarted": "Get Started"
+    },
+    "hero": {
+      "badge": "Choose your own productivity system",
+      "title1": "Plan Today.",
+      "title2": "Own Tomorrow.",
+      "subtitle": "One platform for timeboxing, daily planning, and habit tracking. Choose the systems that work for you — not the other way around.",
+      "cta": "Start Free Today",
+      "ctaSecondary": "See How It Works",
+      "freeToStart": "Free to start",
+      "noCreditCard": "No credit card required",
+      "privacyFirst": "Privacy-first",
+      "chainCaption": "Don't break the chain. Build habits that last."
+    },
+    "features": {
+      "title": "Why",
+      "titleHighlight": "TimeFlow",
+      "subtitle": "Most productivity apps force you into one system. We let you choose.",
+      "modular": {
+        "title": "Modular Systems",
+        "description": "Enable only the systems you need. Timeboxing, habit tracking, block planning — mix and match freely."
+      },
+      "privacy": {
+        "title": "Privacy First",
+        "description": "Your data stays yours. Complete isolation between systems. Not even admins can access your data."
+      },
+      "fast": {
+        "title": "Fast & Fluid",
+        "description": "Instant updates, no page reloads. Designed for speed so you can focus on what matters."
+      }
+    },
+    "systems": {
+      "title": "Choose Your",
+      "titleHighlight": "System",
+      "subtitle": "Three powerful time management methods. Use one, two, or all three.",
+      "chain": {
+        "title": "Seinfeld Chain",
+        "subtitle": "Don't Break the Chain",
+        "description": "Build lasting habits by marking each successful day. Watch your chain grow and feel the motivation to keep it going.",
+        "feature1": "Track up to 2 habits",
+        "feature2": "Success, Fail, Skip statuses",
+        "feature3": "Streak tracking & stats"
+      },
+      "timeboxing": {
+        "title": "Daily Timeboxing",
+        "subtitle": "Inspired by Elon Musk",
+        "description": "Plan every hour of your day with time blocks. Drag tasks, set priorities, and visualize your entire day at a glance.",
+        "feature1": "24-hour calendar view",
+        "feature2": "Top 3 priorities",
+        "feature3": "Drag & drop scheduling"
+      },
+      "sixblock": {
+        "title": "6 Block Planner",
+        "subtitle": "Structured Simplicity",
+        "description": "Divide your day into 6 focused blocks. Add checklists, mark core priorities, and reflect on your progress.",
+        "feature1": "6 customizable blocks",
+        "feature2": "Built-in checklists",
+        "feature3": "Daily reflection"
+      }
+    },
+    "howItWorks": {
+      "title": "Get Started in",
+      "titleHighlight": "3 Steps",
+      "step1": {
+        "title": "Sign Up",
+        "description": "Create your free account in seconds. No credit card required."
+      },
+      "step2": {
+        "title": "Choose Systems",
+        "description": "Enable the time management systems that fit your workflow."
+      },
+      "step3": {
+        "title": "Start Planning",
+        "description": "Take control of your time and build habits that last."
+      }
+    },
+    "cta": {
+      "title": "Ready to Own Your Time?",
+      "subtitle": "Join thousands of people who plan better, build habits, and achieve more.",
+      "button": "Get Started Free"
+    },
+    "footer": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "contact": "Contact",
+      "copyright": "© {year} TimeFlow. All rights reserved."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Choose and manage your time management systems",
+    "enabledSystems": "Enabled Systems"
+  },
+  "chain": {
+    "title": "Seinfeld Chain",
+    "subtitle": "Don't break the chain. Build habits that last.",
+    "addHabit": "Add Habit",
+    "noHabits": "No habits yet",
+    "noHabitsDescription": "Start building your first chain today!",
+    "addFirstHabit": "Add Your First Habit",
+    "maxHabits": "Max {count} habits",
+    "howItWorks": "How it works:",
+    "successLabel": "Success - completed",
+    "failLabel": "Fail - breaks streak",
+    "skipLabel": "Skip - doesn't break streak",
+    "recordToday": "Record Today's Progress",
+    "days": "days",
+    "best": "best",
+    "habitName": "Habit Name",
+    "habitNamePlaceholder": "e.g., Write for 10 minutes",
+    "successCriteria": "Success Criteria",
+    "successCriteriaPlaceholder": "e.g., Write at least 100 words",
+    "successCriteriaHelp": "Define what \"done\" means for this habit",
+    "description": "Description (optional)",
+    "descriptionPlaceholder": "Why is this habit important to you?",
+    "icon": "Icon",
+    "color": "Color",
+    "createHabit": "Create Habit",
+    "editHabit": "Edit Habit",
+    "saveChanges": "Save Changes",
+    "deleteHabit": "Delete Habit",
+    "deleteConfirm": "Delete this habit and all data?",
+    "entry": {
+      "howDidItGo": "How did it go?",
+      "success": "Success",
+      "fail": "Fail",
+      "skip": "Skip",
+      "successDescription": "I completed the habit today",
+      "failDescription": "I didn't complete it (breaks streak)",
+      "skipDescription": "Couldn't do it today (doesn't break streak)",
+      "whatHappened": "What happened?",
+      "reasonForSkipping": "Reason for skipping",
+      "failPlaceholder": "Optional: Why didn't you complete it?",
+      "skipPlaceholder": "e.g., Sick, traveling, family emergency...",
+      "notesOptional": "Notes (optional)",
+      "notesPlaceholder": "Any notes about today's progress?"
+    }
+  },
+  "timeboxing": {
+    "title": "Daily Timeboxing",
+    "subtitle": "Plan every hour of your day",
+    "itemDump": "Item Dump",
+    "priorities": "Top 3 Priorities",
+    "calendar": "Calendar",
+    "addBlock": "Add Block",
+    "addItem": "Add Item",
+    "noItems": "No items yet",
+    "dragHere": "Drag items here"
+  },
+  "sixblock": {
+    "title": "6 Block Planner",
+    "subtitle": "Structure your day into 6 focused blocks",
+    "addBlock": "Add Block {number}",
+    "blockTitle": "Block Title",
+    "core": "Core",
+    "timeRange": "Time Range",
+    "memo": "Memo",
+    "checklist": "Checklist",
+    "addChecklistItem": "Add item",
+    "reflection": {
+      "title": "Daily Reflection",
+      "empty": "No reflection for today yet",
+      "addReflection": "Add Reflection",
+      "dailyMemo": "Daily Memo",
+      "memoPlaceholder": "How was your day?",
+      "goodThings": "What went well?",
+      "goodThingsPlaceholder": "List the things that went well today...",
+      "improvements": "What could be improved?",
+      "improvementsPlaceholder": "What would you do differently?"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "selectLanguage": "Select language"
+  }
+}

@@ -116,6 +116,95 @@ export const SYSTEMS: SystemInfo[] = [
       ],
     },
   },
+  {
+    id: 'chain',
+    name: 'Seinfeld Chain',
+    description: 'Build habits with the "Don\'t Break the Chain" method',
+    icon: '🔗',
+    status: 'available',
+    href: '/dashboard/chain',
+    details: {
+      longDescription:
+        'The Seinfeld Chain—also known as "Don\'t Break the Chain"—is a simple but powerful habit-building technique. Pick a habit, mark each day you complete it, and watch your chain grow. Your only goal: don\'t break the chain.',
+      benefits: [
+        'Visual motivation - seeing your chain grow is incredibly satisfying',
+        'Builds consistency over perfection - just show up every day',
+        "Leverages loss aversion - you won't want to break your streak",
+        'Turns habits into automatic routines through daily repetition',
+        'Simple and focused - no complicated tracking needed',
+      ],
+      steps: [
+        {
+          title: 'Pick a Small Habit',
+          description:
+            'Choose one specific, doable habit. Keep it small - even 5 minutes counts. Examples: "Write for 10 minutes", "Exercise for 20 minutes", "Read 1 page".',
+        },
+        {
+          title: 'Define Success Criteria',
+          description:
+            'Be clear about what "done" means. This removes ambiguity and makes it easy to check off.',
+        },
+        {
+          title: 'Mark Each Day',
+          description:
+            "Every day you complete the habit, mark it. Watch your chain of X's grow longer.",
+        },
+        {
+          title: "Don't Break the Chain",
+          description:
+            'Your only job is to keep the streak alive. If you miss a day, restart without judgment and build again.',
+        },
+      ],
+      inspirations: ['Jerry Seinfeld', 'Atomic Habits', 'The Power of Habit'],
+    },
+  },
+  {
+    id: 'lean',
+    name: 'Lean Time Tracker',
+    description: 'Eliminate waste and maximize value in your time',
+    icon: '🎯',
+    status: 'available',
+
+    href: '/dashboard/lean',
+    details: {
+      longDescription:
+        'Based on Lean manufacturing principles, this system helps you categorize activities as Value, Support, or Waste. Track where your time goes, identify patterns of waste, and systematically eliminate low-value activities.',
+      benefits: [
+        'Identify time-wasting activities automatically',
+        'Track value vs waste ratio over time',
+        'Get actionable insights to improve productivity',
+        'Measure progress as you eliminate waste',
+        'Understand where your productive hours go',
+      ],
+      steps: [
+        {
+          title: 'Log Your Activities',
+          description:
+            'Record what you do throughout the day and categorize each activity as Value, Support, or Waste.',
+        },
+        {
+          title: 'Review Weekly Summary',
+          description:
+            'See your time breakdown and identify your biggest waste patterns.',
+        },
+        {
+          title: 'Eliminate Waste',
+          description:
+            'Mark waste activities for elimination and track your progress.',
+        },
+        {
+          title: 'Reallocate Time',
+          description:
+            'Use reclaimed time for high-value activities that produce results.',
+        },
+      ],
+      inspirations: [
+        'Toyota Production System',
+        'Lean Manufacturing',
+        'Time Value Analysis',
+      ],
+    },
+  },
 ];
 
 export function getSystemById(id: string): SystemInfo | undefined {

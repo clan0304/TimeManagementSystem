@@ -1,30 +1,35 @@
-import Link from 'next/link';
-import { auth } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { Navbar } from './(landing)/components/navbar';
+import { HeroSection } from './(landing)/components/hero-section';
+import { FeaturesSection } from './(landing)/components/features-section';
+import { SystemsSection } from './(landing)/components/systems-section';
+import { HowItWorksSection } from './(landing)/components/how-it-works-section';
+import { CtaSection } from './(landing)/components/cta-section';
+import { Footer } from './(landing)/components/footer';
 
-export default async function Home() {
-  const { userId } = await auth();
-
-  if (userId) {
-    redirect('/dashboard');
-  }
-
+export default function LandingPage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-slate-50 to-slate-100">
-      <div className="text-center space-y-6">
-        <h1 className="text-4xl font-bold text-slate-900">
-          Time Management App
-        </h1>
-        <p className="text-lg text-slate-600 max-w-md">
-          Take control of your time and boost your productivity.
-        </p>
-        <Link href="/auth">
-          <Button size="lg" className="mt-4">
-            Get Started
-          </Button>
-        </Link>
+    <div className="min-h-screen bg-[#09090B] text-[#F8FAFC] overflow-hidden">
+      {/* Background Effects */}
+      <div className="fixed inset-0 pointer-events-none">
+        {/* Gradient orb */}
+        <div className="absolute top-[-20%] left-[50%] translate-x-[-50%] w-[800px] h-[800px] bg-[#22D3EE] opacity-[0.07] rounded-full blur-[120px]" />
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(#F8FAFC 1px, transparent 1px), linear-gradient(90deg, #F8FAFC 1px, transparent 1px)`,
+            backgroundSize: '64px 64px',
+          }}
+        />
       </div>
-    </main>
+
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <SystemsSection />
+      <HowItWorksSection />
+      <CtaSection />
+      <Footer />
+    </div>
   );
 }
