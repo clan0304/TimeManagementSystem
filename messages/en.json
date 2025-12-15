@@ -17,8 +17,10 @@
       "systems": "Systems",
       "howItWorks": "How It Works",
       "signIn": "Sign In",
-      "getStarted": "Get Started"
+      "getStarted": "Get Started",
+      "dashboard": "Dashboard"
     },
+
     "hero": {
       "badge": "Choose your own productivity system",
       "title1": "Plan Today.",
@@ -75,6 +77,14 @@
         "feature1": "6 customizable blocks",
         "feature2": "Built-in checklists",
         "feature3": "Daily reflection"
+      },
+      "lean": {
+        "title": "Lean Time Tracker",
+        "subtitle": "Eliminate Waste",
+        "description": "Categorize activities as Value, Support, or Waste. Identify patterns, eliminate low-value tasks, and maximize productivity.",
+        "feature1": "Value/Support/Waste categories",
+        "feature2": "Waste pattern detection",
+        "feature3": "Weekly insights & analytics"
       }
     },
     "howItWorks": {

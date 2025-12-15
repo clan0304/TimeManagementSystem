@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export function HeroSection() {
@@ -31,7 +31,7 @@ export function HeroSection() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/sign-up"
+            href="/auth"
             className="group flex items-center gap-2 px-8 py-4 bg-[#22D3EE] text-[#09090B] font-semibold rounded-xl hover:bg-[#67E8F9] transition-all hover:scale-105"
           >
             {t('cta')}
@@ -43,6 +43,22 @@ export function HeroSection() {
           >
             {t('ctaSecondary')}
           </Link>
+        </div>
+
+        {/* Social Proof */}
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-zinc-500">
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 text-[#22D3EE]" />
+            <span>{t('freeToStart')}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 text-[#22D3EE]" />
+            <span>{t('noCreditCard')}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 text-[#22D3EE]" />
+            <span>{t('privacyFirst')}</span>
+          </div>
         </div>
       </div>
 

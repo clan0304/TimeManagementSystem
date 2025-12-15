@@ -3,10 +3,13 @@
 import Link from 'next/link';
 import { Zap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useUser, UserButton } from '@clerk/nextjs';
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { Button } from '@/components/ui/button';
 
 export function Navbar() {
   const t = useTranslations('landing.nav');
+  const { isSignedIn, isLoaded } = useUser();
 
   return (
     <nav className="relative z-10 flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
@@ -40,18 +43,52 @@ export function Navbar() {
 
       <div className="flex items-center gap-4">
         <LanguageSwitcher />
-        <Link
-          href="/sign-in"
-          className="hidden sm:block text-sm text-zinc-400 hover:text-white transition-colors"
-        >
-          {t('signIn')}
-        </Link>
-        <Link
-          href="/sign-up"
-          className="px-4 py-2 bg-[#22D3EE] text-[#09090B] text-sm font-semibold rounded-lg hover:bg-[#67E8F9] transition-colors"
-        >
-          {t('getStarted')}
-        </Link>
+
+        {/* Show loading placeholder while Clerk loads */}
+        {!isLoaded ? (
+          <div className="w-8 h-8 rounded-full bg-zinc-800 animate-pulse" />
+        ) : isSignedIn ? (
+          /* Signed in: Show dashboard link and user button */
+          <div className="flex items-center gap-4">
+            <Link href="/dashboard">
+              <Button
+                variant="ghost"
+                className="text-zinc-400 hover:text-white hover:bg-zinc-800"
+              >
+                {t('dashboard')}
+              </Button>
+            </Link>
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: 'w-9 h-9',
+                  userButtonPopoverCard: 'bg-zinc-900 border-zinc-800',
+                  userButtonPopoverActionButton:
+                    'text-zinc-300 hover:bg-zinc-800',
+                  userButtonPopoverActionButtonText: 'text-zinc-300',
+                  userButtonPopoverFooter: 'hidden',
+                },
+              }}
+            />
+          </div>
+        ) : (
+          /* Not signed in: Show sign in and get started */
+          <>
+            <Link
+              href="/auth"
+              className="hidden sm:block text-sm text-zinc-400 hover:text-white transition-colors"
+            >
+              {t('signIn')}
+            </Link>
+            <Link
+              href="/auth"
+              className="px-4 py-2 bg-[#22D3EE] text-[#09090B] text-sm font-semibold rounded-lg hover:bg-[#67E8F9] transition-colors"
+            >
+              {t('getStarted')}
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );

@@ -19,7 +19,7 @@ export function CtaSection() {
           <h2 className="text-3xl sm:text-5xl font-bold mb-6">{t('title')}</h2>
           <p className="text-xl text-zinc-400 mb-10">{t('subtitle')}</p>
           <Link
-            href="/sign-up"
+            href="/auth"
             className="group inline-flex items-center gap-2 px-10 py-5 bg-[#22D3EE] text-[#09090B] text-lg font-semibold rounded-xl hover:bg-[#67E8F9] transition-all hover:scale-105"
           >
             {t('button')}

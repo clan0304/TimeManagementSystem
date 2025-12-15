@@ -37,7 +37,7 @@ export function WeekPicker({ selectedWeek, onWeekSelect }: WeekPickerProps) {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="min-w-[240px] justify-start text-left font-medium"
+          className="min-w-60 justify-start text-left font-medium"
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
           {format(weekStart, 'MMM d')} - {format(weekEnd, 'MMM d, yyyy')}

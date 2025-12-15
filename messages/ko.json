@@ -17,7 +17,8 @@
       "systems": "시스템",
       "howItWorks": "사용 방법",
       "signIn": "로그인",
-      "getStarted": "시작하기"
+      "getStarted": "시작하기",
+      "dashboard": "대시보드"
     },
     "hero": {
       "badge": "나만의 생산성 시스템을 선택하세요",
@@ -76,6 +77,14 @@
         "feature1": "6개의 맞춤형 블록",
         "feature2": "내장 체크리스트",
         "feature3": "일일 반성"
+      },
+      "lean": {
+        "title": "린 타임 트래커",
+        "subtitle": "낭비 제거",
+        "description": "활동을 가치, 지원, 낭비로 분류하세요. 패턴을 파악하고, 낭비를 제거하고, 생산성을 극대화하세요.",
+        "feature1": "가치/지원/낭비 분류",
+        "feature2": "낭비 패턴 감지",
+        "feature3": "주간 인사이트 및 분석"
       }
     },
     "howItWorks": {
