@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { useSession, useUser } from '@clerk/nextjs';
+import { useTranslations } from 'next-intl';
 import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { createClerkSupabaseClient } from '@/lib/supabase/client';
@@ -14,6 +15,8 @@ import { AddHabitDialog } from './components/add-habit-dialog';
 export default function ChainPage() {
   const { user } = useUser();
   const { session } = useSession();
+  const t = useTranslations('chain');
+  const tCommon = useTranslations('common');
   const [habits, setHabits] = useState<ChainHabit[]>([]);
   const [habitStats, setHabitStats] = useState<Record<string, ChainHabitStats>>(
     {}
@@ -92,7 +95,7 @@ export default function ChainPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <p className="text-slate-500">Loading...</p>
+        <p className="text-slate-500">{tCommon('loading')}</p>
       </div>
     );
   }
@@ -102,40 +105,38 @@ export default function ChainPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Seinfeld Chain</h1>
-          <p className="text-slate-600 mt-1">
-            Don&apos;t break the chain. Build habits that last.
-          </p>
+          <h1 className="text-2xl font-bold text-slate-900">{t('title')}</h1>
+          <p className="text-slate-600 mt-1">{t('subtitle')}</p>
         </div>
         {habits.length < MAX_HABITS && (
           <Button onClick={() => setIsAddDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
-            Add Habit
+            {t('addHabit')}
           </Button>
         )}
       </div>
 
       {/* Info Box */}
       <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm text-slate-600">
-        <p className="font-medium text-slate-700 mb-2">How it works:</p>
+        <p className="font-medium text-slate-700 mb-2">{t('howItWorks')}</p>
         <div className="flex flex-wrap gap-4">
           <div className="flex items-center gap-2">
             <span className="w-6 h-6 rounded bg-green-500 text-white flex items-center justify-center text-xs font-bold">
               ✓
             </span>
-            <span>Success - completed</span>
+            <span>{t('successLabel')}</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-6 h-6 rounded bg-red-500 text-white flex items-center justify-center text-xs font-bold">
               ✗
             </span>
-            <span>Fail - breaks streak</span>
+            <span>{t('failLabel')}</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-6 h-6 rounded bg-slate-400 text-white flex items-center justify-center text-xs font-bold">
               −
             </span>
-            <span>Skip - doesn&apos;t break streak</span>
+            <span>{t('skipLabel')}</span>
           </div>
         </div>
       </div>
@@ -145,14 +146,14 @@ export default function ChainPage() {
         <div className="text-center py-12 bg-white rounded-lg border border-slate-200">
           <div className="text-4xl mb-4">🔗</div>
           <h3 className="text-lg font-medium text-slate-900 mb-2">
-            No habits yet
+            {t('noHabits')}
           </h3>
           <p className="text-slate-500 mb-4">
-            Start building your first chain today! (Max {MAX_HABITS} habits)
+            {t('noHabitsDescription')} ({t('maxHabits', { count: MAX_HABITS })})
           </p>
           <Button onClick={() => setIsAddDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
-            Add Your First Habit
+            {t('addFirstHabit')}
           </Button>
         </div>
       ) : (

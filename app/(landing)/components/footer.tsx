@@ -14,7 +14,7 @@ export function Footer() {
           <div className="w-8 h-8 rounded-lg bg-[#22D3EE] flex items-center justify-center">
             <Zap className="w-5 h-5 text-[#09090B]" />
           </div>
-          <span className="text-lg font-bold">TimeFlow</span>
+          <span className="text-lg font-bold">Build Better Days</span>
         </Link>
 
         <div className="flex items-center gap-8 text-sm text-zinc-500">

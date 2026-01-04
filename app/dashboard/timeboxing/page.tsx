@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { useSession, useUser } from '@clerk/nextjs';
+import { useTranslations } from 'next-intl';
 import { format } from 'date-fns';
 import {
   DndContext,
@@ -28,6 +29,8 @@ import { DragOverlayWrapper } from './components/drag-overlay-wrapper';
 export default function TimeboxingPage() {
   const { user } = useUser();
   const { session } = useSession();
+  const t = useTranslations('timeboxing');
+  const tCommon = useTranslations('common');
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [items, setItems] = useState<TimeboxingItem[]>([]);
   const [blocks, setBlocks] = useState<TimeboxingBlock[]>([]);
@@ -130,7 +133,7 @@ export default function TimeboxingPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <p className="text-slate-500">Loading...</p>
+        <p className="text-slate-500">{tCommon('loading')}</p>
       </div>
     );
   }
@@ -146,12 +149,8 @@ export default function TimeboxingPage() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">
-              Daily Timeboxing
-            </h1>
-            <p className="text-slate-600 mt-1">
-              Plan your day with time blocks
-            </p>
+            <h1 className="text-2xl font-bold text-slate-900">{t('title')}</h1>
+            <p className="text-slate-600 mt-1">{t('subtitle')}</p>
           </div>
           <DatePicker date={selectedDate} onDateChange={setSelectedDate} />
         </div>

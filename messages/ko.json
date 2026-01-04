@@ -9,7 +9,14 @@
     "back": "뒤로",
     "confirm": "확인",
     "success": "성공",
-    "error": "오류"
+    "error": "오류",
+    "enable": "활성화",
+    "disable": "비활성화",
+    "open": "열기",
+    "close": "닫기",
+    "saving": "저장 중...",
+    "creating": "생성 중...",
+    "deleting": "삭제 중..."
   },
   "landing": {
     "nav": {
@@ -119,7 +126,36 @@
   "dashboard": {
     "title": "대시보드",
     "subtitle": "시간 관리 시스템을 선택하고 관리하세요",
-    "enabledSystems": "활성화된 시스템"
+    "nav": {
+      "home": "홈",
+      "yourSystems": "내 시스템"
+    },
+    "systems": {
+      "timeboxing": {
+        "name": "데일리 타임박싱"
+      },
+      "sixblock": {
+        "name": "6블록 플래너"
+      },
+      "chain": {
+        "name": "사인펠드 체인"
+      },
+      "lean": {
+        "name": "린 타임 트래커"
+      }
+    },
+    "systemCard": {
+      "comingSoon": "출시 예정",
+      "viewDetails": "상세 보기",
+      "enabling": "활성화 중..."
+    },
+    "systemDetail": {
+      "backToDashboard": "대시보드로 돌아가기",
+      "whatIs": "{name}란?",
+      "benefits": "장점",
+      "howToUse": "사용 방법",
+      "inspiredBy": "영감"
+    }
   },
   "chain": {
     "title": "사인펠드 체인",
@@ -168,35 +204,111 @@
   },
   "timeboxing": {
     "title": "데일리 타임박싱",
-    "subtitle": "하루의 모든 시간을 계획하세요",
-    "itemDump": "항목 덤프",
+    "subtitle": "시간 블록으로 하루를 계획하세요",
+    "itemDump": "할 일 목록",
     "priorities": "상위 3개 우선순위",
-    "calendar": "캘린더",
+    "calendar": "일일 캘린더",
     "addBlock": "블록 추가",
     "addItem": "항목 추가",
-    "noItems": "아직 항목이 없습니다",
-    "dragHere": "여기로 드래그하세요"
+    "noItems": "아직 항목이 없습니다. 위에서 작업을 추가하세요.",
+    "dragHere": "여기로 드래그하세요",
+    "task": "작업",
+    "selectOrTypeTask": "작업 선택 또는 입력",
+    "orTypeNewTask": "또는 새 작업 입력...",
+    "startTime": "시작 시간",
+    "endTime": "종료 시간",
+    "editBlock": "블록 수정"
   },
   "sixblock": {
     "title": "6블록 플래너",
     "subtitle": "하루를 6개의 집중 블록으로 구성하세요",
     "addBlock": "블록 {number} 추가",
     "blockTitle": "블록 제목",
+    "editBlockTitle": "블록 {number} 수정",
     "core": "핵심",
-    "timeRange": "시간 범위",
-    "memo": "메모",
+    "markAsCore": "핵심으로 표시 (최대 2개)",
+    "removeFromCore": "핵심에서 제거",
+    "timeRange": "시간 범위 (선택사항)",
+    "memo": "메모 / 설명",
+    "memoPlaceholder": "이 블록에 대한 메모를 추가하세요...",
     "checklist": "체크리스트",
-    "addChecklistItem": "항목 추가",
+    "noChecklistItems": "아직 체크리스트 항목이 없습니다",
+    "addChecklistItem": "체크리스트 항목 추가...",
+    "deleteBlock": "블록 삭제",
     "reflection": {
       "title": "일일 반성",
-      "empty": "오늘의 반성이 아직 없습니다",
+      "empty": "아직 일일 반성이 없습니다. 오늘 하루는 어땠나요?",
       "addReflection": "반성 추가",
-      "dailyMemo": "일일 메모",
-      "memoPlaceholder": "오늘 하루는 어땠나요?",
-      "goodThings": "잘된 점은?",
+      "dailyMemo": "오늘의 메모",
+      "memoPlaceholder": "하루에 대한 일반적인 메모...",
+      "goodThings": "잘된 점",
       "goodThingsPlaceholder": "오늘 잘된 점을 적어보세요...",
-      "improvements": "개선할 점은?",
-      "improvementsPlaceholder": "다르게 했으면 하는 것은?"
+      "badThings": "아쉬운 점",
+      "badThingsPlaceholder": "오늘 아쉬웠던 점은...",
+      "nextGoals": "다음 목표",
+      "nextGoalsPlaceholder": "내일 집중할 것은..."
+    }
+  },
+  "lean": {
+    "title": "린 타임 트래커",
+    "subtitle": "낭비를 제거하고, 가치를 극대화하세요.",
+    "logActivity": "활동 기록",
+    "goToCurrentWeek": "이번 주로 이동",
+    "weeklySummary": "주간 요약",
+    "totalTracked": "총 기록 시간: {time}",
+    "insights": "인사이트",
+    "wastePatterns": "주요 낭비 활동",
+    "noWastePatterns": "이번 주에 기록된 낭비 활동이 없습니다. 잘하셨어요!",
+    "potentialSavings": "예상 절약 시간: {time}/주",
+    "eliminate": "제거",
+    "eliminatedWaste": "제거된 낭비",
+    "noEliminations": "아직 제거된 항목이 없습니다. 낭비 활동을 표시하여 진행 상황을 추적하세요.",
+    "totalTimeSaved": "🎉 총 절약 시간: {time}/주",
+    "dailyActivities": "일일 활동",
+    "noActivitiesForDay": "{date}에 기록된 활동이 없습니다.",
+    "activity": "활동",
+    "activityPlaceholder": "무엇을 했나요?",
+    "category": "카테고리",
+    "duration": "소요 시간",
+    "minutes": "분",
+    "startTimeOptional": "시작 시간 (선택사항)",
+    "noteOptional": "메모 (선택사항)",
+    "notePlaceholder": "추가 세부 정보...",
+    "editActivity": "활동 수정",
+    "deleteActivity": "활동 삭제",
+    "deleteActivityConfirm": "이 활동을 삭제하시겠습니까?",
+    "types": {
+      "value": "가치",
+      "support": "지원",
+      "waste": "낭비"
+    },
+    "typeDescriptions": {
+      "value": "직접적으로 결과를 만드는 활동",
+      "support": "필요하지만 간접적인 활동",
+      "waste": "가치 없음, 제거 대상"
+    },
+    "insightMessages": {
+      "startLogging": "활동 기록을 시작하세요",
+      "startLoggingDesc": "시간이 어디로 가는지 발견하고 개선 기회를 찾기 위해 시간을 추적하세요.",
+      "highWaste": "시간의 {percentage}%가 낭비입니다",
+      "highWasteDesc": "이번 주 {time}입니다. 업계 기준은 15% 미만입니다.",
+      "highWasteAction": "상위 낭비 활동 제거에 집중하세요.",
+      "recurringPattern": "\"{name}\"이(가) 반복됩니다",
+      "recurringPatternDesc": "이번 주 {count}회 발생, {time} 소요.",
+      "recurringPatternAction": "이 활동을 묶거나, 자동화하거나, 제거하는 것을 고려하세요.",
+      "morningPower": "오전이 당신의 파워타임입니다",
+      "morningPowerDesc": "가치 작업의 {percentage}%가 정오 전에 이루어집니다.",
+      "morningPowerAction": "가장 중요한 작업을 위해 오전 시간을 보호하세요.",
+      "afternoonPower": "오후가 당신의 파워타임입니다",
+      "afternoonPowerDesc": "가치 작업의 {percentage}%가 정오 이후에 이루어집니다.",
+      "afternoonPowerAction": "중요한 작업을 오후에 예약하세요.",
+      "improving": "개선되고 있어요!",
+      "improvingDesc": "낭비가 지난주 대비 {time} 감소했습니다.",
+      "excellentRatio": "훌륭한 가치 비율",
+      "excellentRatioDesc": "시간의 {percentage}%가 직접적인 가치를 창출합니다. 계속 유지하세요!",
+      "potentialSavingsTitle": "예상 절약 시간: {time}/주",
+      "potentialSavingsDesc": "상위 {count}개 낭비 활동을 제거하면 상당한 시간을 확보할 수 있습니다.",
+      "potentialSavingsAction": "이 활동들을 제거 대상으로 표시하고 진행 상황을 추적하세요."
     }
   },
   "settings": {

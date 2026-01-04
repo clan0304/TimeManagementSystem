@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { useSession, useUser } from '@clerk/nextjs';
+import { useTranslations } from 'next-intl';
 import { format } from 'date-fns';
 import { createClerkSupabaseClient } from '@/lib/supabase/client';
 import {
@@ -23,6 +24,8 @@ import { MAX_BLOCKS } from '@/lib/systems/sixblock/constants';
 export default function SixBlockPage() {
   const { user } = useUser();
   const { session } = useSession();
+  const t = useTranslations('sixblock');
+  const tCommon = useTranslations('common');
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [day, setDay] = useState<SixBlockDay | null>(null);
   const [blocks, setBlocks] = useState<SixBlockBlock[]>([]);
@@ -117,7 +120,7 @@ export default function SixBlockPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <p className="text-slate-500">Loading...</p>
+        <p className="text-slate-500">{tCommon('loading')}</p>
       </div>
     );
   }
@@ -127,10 +130,8 @@ export default function SixBlockPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">6 Block Planner</h1>
-          <p className="text-slate-600 mt-1">
-            Structure your day into 6 focused blocks
-          </p>
+          <h1 className="text-2xl font-bold text-slate-900">{t('title')}</h1>
+          <p className="text-slate-600 mt-1">{t('subtitle')}</p>
         </div>
         <DatePicker date={selectedDate} onDateChange={setSelectedDate} />
       </div>

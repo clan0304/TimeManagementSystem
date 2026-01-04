@@ -1,7 +1,8 @@
+// app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
-import { getLocale, getMessages } from 'next-intl/server';
+import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
 import { LocaleProvider } from '@/components/providers/locale-provider';
 import './globals.css';
 
@@ -19,12 +20,17 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   const messages = await getMessages();
+  const timeZone = await getTimeZone();
 
   return (
     <ClerkProvider>
       <html lang={locale}>
         <body className={inter.className}>
-          <LocaleProvider locale={locale} messages={messages}>
+          <LocaleProvider
+            locale={locale}
+            messages={messages}
+            timeZone={timeZone}
+          >
             {children}
           </LocaleProvider>
         </body>

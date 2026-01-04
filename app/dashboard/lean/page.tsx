@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { useSession, useUser } from '@clerk/nextjs';
+import { useTranslations } from 'next-intl';
 import {
   format,
   startOfWeek,
@@ -36,6 +37,8 @@ import { WeekPicker } from './components/week-picker';
 export default function LeanPage() {
   const { user, isLoaded: isUserLoaded } = useUser();
   const { session, isLoaded: isSessionLoaded } = useSession();
+  const t = useTranslations('lean');
+  const tCommon = useTranslations('common');
   const [currentWeek, setCurrentWeek] = useState(new Date());
   const [activities, setActivities] = useState<LeanActivity[]>([]);
   const [eliminations, setEliminations] = useState<LeanElimination[]>([]);
@@ -162,7 +165,7 @@ export default function LeanPage() {
   if (!isAuthReady) {
     return (
       <div className="flex items-center justify-center h-64">
-        <p className="text-slate-500">Initializing...</p>
+        <p className="text-slate-500">{tCommon('loading')}</p>
       </div>
     );
   }
@@ -190,7 +193,7 @@ export default function LeanPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <p className="text-slate-500">Loading...</p>
+        <p className="text-slate-500">{tCommon('loading')}</p>
       </div>
     );
   }
@@ -200,16 +203,12 @@ export default function LeanPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">
-            Lean Time Tracker
-          </h1>
-          <p className="text-slate-600 mt-1">
-            Eliminate waste, maximize value.
-          </p>
+          <h1 className="text-2xl font-bold text-slate-900">{t('title')}</h1>
+          <p className="text-slate-600 mt-1">{t('subtitle')}</p>
         </div>
         <Button onClick={() => setIsAddDialogOpen(true)}>
           <Plus className="h-4 w-4 mr-2" />
-          Log Activity
+          {t('logActivity')}
         </Button>
       </div>
 

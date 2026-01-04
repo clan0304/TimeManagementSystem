@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession, useUser } from '@clerk/nextjs';
+import { useTranslations } from 'next-intl';
 import { Info } from 'lucide-react';
 import {
   Card,
@@ -25,6 +26,8 @@ export function SystemCard({ system, isEnabled }: SystemCardProps) {
   const { user } = useUser();
   const { session } = useSession();
   const router = useRouter();
+  const t = useTranslations('dashboard');
+  const tCommon = useTranslations('common');
   const [loading, setLoading] = useState(false);
   const [enabled, setEnabled] = useState(isEnabled);
 
@@ -62,16 +65,19 @@ export function SystemCard({ system, isEnabled }: SystemCardProps) {
   const isAvailable = system.status === 'available';
   const isComingSoon = system.status === 'coming_soon';
 
+  // Get translated system name
+  const systemName = t(`systems.${system.id}.name`);
+
   return (
     <Card className={`relative ${!isAvailable ? 'opacity-60' : ''}`}>
       <CardHeader>
         <div className="flex items-center gap-3">
           <span className="text-3xl">{system.icon}</span>
           <div>
-            <CardTitle className="text-lg">{system.name}</CardTitle>
+            <CardTitle className="text-lg">{systemName}</CardTitle>
             {isComingSoon && (
               <span className="text-xs bg-slate-200 text-slate-600 px-2 py-0.5 rounded-full">
-                Coming Soon
+                {t('systemCard.comingSoon')}
               </span>
             )}
           </div>
@@ -90,14 +96,14 @@ export function SystemCard({ system, isEnabled }: SystemCardProps) {
                     onClick={handleOpen}
                     className="flex-1 hover:cursor-pointer"
                   >
-                    Open
+                    {tCommon('open')}
                   </Button>
                   <Button
                     onClick={handleToggle}
                     variant="outline"
                     disabled={loading}
                   >
-                    {loading ? '...' : 'Disable'}
+                    {loading ? '...' : tCommon('disable')}
                   </Button>
                 </>
               ) : (
@@ -106,7 +112,7 @@ export function SystemCard({ system, isEnabled }: SystemCardProps) {
                   className="w-full hover:cursor-pointer"
                   disabled={loading}
                 >
-                  {loading ? 'Enabling...' : 'Enable'}
+                  {loading ? t('systemCard.enabling') : tCommon('enable')}
                 </Button>
               )}
             </div>
@@ -118,7 +124,7 @@ export function SystemCard({ system, isEnabled }: SystemCardProps) {
               className="w-full text-white bg-black hover:text-slate-700 hover:cursor-pointer"
             >
               <Info className="h-4 w-4 mr-2" />
-              View Details
+              {t('systemCard.viewDetails')}
             </Button>
           </div>
         )}

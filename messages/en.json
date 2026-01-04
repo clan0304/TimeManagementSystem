@@ -9,7 +9,14 @@
     "back": "Back",
     "confirm": "Confirm",
     "success": "Success",
-    "error": "Error"
+    "error": "Error",
+    "enable": "Enable",
+    "disable": "Disable",
+    "open": "Open",
+    "close": "Close",
+    "saving": "Saving...",
+    "creating": "Creating...",
+    "deleting": "Deleting..."
   },
   "landing": {
     "nav": {
@@ -20,7 +27,6 @@
       "getStarted": "Get Started",
       "dashboard": "Dashboard"
     },
-
     "hero": {
       "badge": "Choose your own productivity system",
       "title1": "Plan Today.",
@@ -118,7 +124,36 @@
   "dashboard": {
     "title": "Dashboard",
     "subtitle": "Choose and manage your time management systems",
-    "enabledSystems": "Enabled Systems"
+    "nav": {
+      "home": "Home",
+      "yourSystems": "Your Systems"
+    },
+    "systems": {
+      "timeboxing": {
+        "name": "Daily Timeboxing"
+      },
+      "sixblock": {
+        "name": "6 Block Planner"
+      },
+      "chain": {
+        "name": "Seinfeld Chain"
+      },
+      "lean": {
+        "name": "Lean Time Tracker"
+      }
+    },
+    "systemCard": {
+      "comingSoon": "Coming Soon",
+      "viewDetails": "View Details",
+      "enabling": "Enabling..."
+    },
+    "systemDetail": {
+      "backToDashboard": "Back to Dashboard",
+      "whatIs": "What is {name}?",
+      "benefits": "Benefits",
+      "howToUse": "How to Use",
+      "inspiredBy": "Inspired By"
+    }
   },
   "chain": {
     "title": "Seinfeld Chain",
@@ -167,35 +202,111 @@
   },
   "timeboxing": {
     "title": "Daily Timeboxing",
-    "subtitle": "Plan every hour of your day",
+    "subtitle": "Plan your day with time blocks",
     "itemDump": "Item Dump",
     "priorities": "Top 3 Priorities",
-    "calendar": "Calendar",
+    "calendar": "Daily Calendar",
     "addBlock": "Add Block",
     "addItem": "Add Item",
-    "noItems": "No items yet",
-    "dragHere": "Drag items here"
+    "noItems": "No items yet. Add your tasks above.",
+    "dragHere": "Drag item here",
+    "task": "Task",
+    "selectOrTypeTask": "Select or type a task",
+    "orTypeNewTask": "Or type a new task...",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "editBlock": "Edit Block"
   },
   "sixblock": {
     "title": "6 Block Planner",
     "subtitle": "Structure your day into 6 focused blocks",
     "addBlock": "Add Block {number}",
     "blockTitle": "Block Title",
+    "editBlockTitle": "Edit Block {number}",
     "core": "Core",
-    "timeRange": "Time Range",
-    "memo": "Memo",
+    "markAsCore": "Mark as core (max 2)",
+    "removeFromCore": "Remove from core",
+    "timeRange": "Time Range (optional)",
+    "memo": "Memo / Description",
+    "memoPlaceholder": "Add notes for this block...",
     "checklist": "Checklist",
-    "addChecklistItem": "Add item",
+    "noChecklistItems": "No checklist items yet",
+    "addChecklistItem": "Add checklist item...",
+    "deleteBlock": "Delete Block",
     "reflection": {
       "title": "Daily Reflection",
-      "empty": "No reflection for today yet",
+      "empty": "No daily reflection yet. How was your day?",
       "addReflection": "Add Reflection",
-      "dailyMemo": "Daily Memo",
-      "memoPlaceholder": "How was your day?",
-      "goodThings": "What went well?",
-      "goodThingsPlaceholder": "List the things that went well today...",
-      "improvements": "What could be improved?",
-      "improvementsPlaceholder": "What would you do differently?"
+      "dailyMemo": "Today's Memo",
+      "memoPlaceholder": "General notes about your day...",
+      "goodThings": "Good Things",
+      "goodThingsPlaceholder": "What went well today...",
+      "badThings": "Bad Things",
+      "badThingsPlaceholder": "What didn't go well...",
+      "nextGoals": "Next / Goals",
+      "nextGoalsPlaceholder": "What to focus on tomorrow..."
+    }
+  },
+  "lean": {
+    "title": "Lean Time Tracker",
+    "subtitle": "Eliminate waste, maximize value.",
+    "logActivity": "Log Activity",
+    "goToCurrentWeek": "Go to Current Week",
+    "weeklySummary": "Weekly Summary",
+    "totalTracked": "Total tracked: {time}",
+    "insights": "Insights",
+    "wastePatterns": "Top Waste Activities",
+    "noWastePatterns": "No waste activities logged this week. Great job!",
+    "potentialSavings": "Potential savings: {time}/week",
+    "eliminate": "Eliminate",
+    "eliminatedWaste": "Eliminated Waste",
+    "noEliminations": "No eliminations yet. Mark waste activities to track your progress.",
+    "totalTimeSaved": "🎉 Total time saved: {time}/week",
+    "dailyActivities": "Daily Activities",
+    "noActivitiesForDay": "No activities logged for {date}.",
+    "activity": "Activity",
+    "activityPlaceholder": "What did you work on?",
+    "category": "Category",
+    "duration": "Duration",
+    "minutes": "minutes",
+    "startTimeOptional": "Start Time (optional)",
+    "noteOptional": "Note (optional)",
+    "notePlaceholder": "Any additional details...",
+    "editActivity": "Edit Activity",
+    "deleteActivity": "Delete Activity",
+    "deleteActivityConfirm": "Delete this activity?",
+    "types": {
+      "value": "Value",
+      "support": "Support",
+      "waste": "Waste"
+    },
+    "typeDescriptions": {
+      "value": "Directly produces results",
+      "support": "Necessary but indirect value",
+      "waste": "No value, should eliminate"
+    },
+    "insightMessages": {
+      "startLogging": "Start logging your activities",
+      "startLoggingDesc": "Track your time to discover where it goes and find opportunities to improve.",
+      "highWaste": "{percentage}% of your time is waste",
+      "highWasteDesc": "That's {time} this week. Industry benchmark is under 15%.",
+      "highWasteAction": "Focus on eliminating your top waste activities.",
+      "recurringPattern": "\"{name}\" is recurring",
+      "recurringPatternDesc": "Appeared {count}x this week, costing {time}.",
+      "recurringPatternAction": "Consider batching, automating, or eliminating this activity.",
+      "morningPower": "Morning is your power time",
+      "morningPowerDesc": "{percentage}% of value work happens before noon.",
+      "morningPowerAction": "Protect morning hours for your most important work.",
+      "afternoonPower": "Afternoon is your power time",
+      "afternoonPowerDesc": "{percentage}% of value work happens after noon.",
+      "afternoonPowerAction": "Schedule important tasks in the afternoon.",
+      "improving": "You're improving!",
+      "improvingDesc": "Waste decreased by {time} compared to last week.",
+      "excellentRatio": "Excellent value ratio",
+      "excellentRatioDesc": "{percentage}% of your time produces direct value. Keep it up!",
+      "potentialSavingsTitle": "Potential savings: {time}/week",
+      "potentialSavingsDesc": "Eliminating your top {count} waste activities could free up significant time.",
+      "potentialSavingsAction": "Mark these activities for elimination and track your progress."
     }
   },
   "settings": {
